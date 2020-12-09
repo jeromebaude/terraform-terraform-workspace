@@ -13,13 +13,7 @@ resource "tfe_workspace" "new" {
   terraform_version     = lookup(var.workspace[count.index], "tf_version")
   queue_all_runs        = lookup(var.workspace[count.index], "queue_all_runs")
 
-  vcs_repo {
-    identifier         = lookup(var.workspace[count.index], "identifier")
-    branch             = lookup(var.workspace[count.index], "branch")
-    ingress_submodules = lookup(var.workspace[count.index], "ingress_submodules")
-    oauth_token_id     = lookup(var.workspace[count.index], "oauth_token_id")
   }
-}
 
 ### Defines Variables ###
 
